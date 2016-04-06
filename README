@@ -6,3 +6,4 @@ the file COPYING, distributed as part of this software.
 This is a deep rewrite of the atb-ctypes module (avaible from the pyglons
 project). Only glut handlers have been written but it should be quite easy to
 add others.
+test
