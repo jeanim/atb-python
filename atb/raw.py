@@ -99,7 +99,7 @@ except:
     TwEventSDL                  = getattr(__dll__,"TwEventSDL")
     TwEventSFML                 = getattr(__dll__,"TwEventSFML")
     TwEventWin32                = getattr(__dll__,"TwEventWin32")
-    TwEventWin                  = getattr(__dll__,"TwEventWin@16")
+    TwEventWin                  = getattr(__dll__,"TwEventWin")
     TwGLUTModifiersFunc         = getattr(__dll__,"TwGLUTModifiersFunc")
     TwGetBarByIndex             = getattr(__dll__,"TwGetBarByIndex")
     TwGetBarByName              = getattr(__dll__,"TwGetBarByName")
