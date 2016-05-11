@@ -14,6 +14,8 @@ name = ctypes.util.find_library('AntTweakBar')
 if not name:
     raise RuntimeError, 'AntTweakBar library not found'
 __dll__ = ctypes.CDLL(name)
+
+
 try:
     TwAddButton                 = getattr(__dll__,"_TwAddButton@20")
     TwAddSeparator              = getattr(__dll__,"_TwAddSeparator@12")
@@ -98,8 +100,11 @@ except:
     TwEventMouseButtonGLFW      = getattr(__dll__,"TwEventMouseButtonGLFW")
     TwEventSDL                  = getattr(__dll__,"TwEventSDL")
     TwEventSFML                 = getattr(__dll__,"TwEventSFML")
-    TwEventWin32                = getattr(__dll__,"TwEventWin32")
-    TwEventWin                  = getattr(__dll__,"TwEventWin")
+    try:
+        TwEventWin32                = getattr(__dll__,"TwEventWin32")
+        TwEventWin                  = getattr(__dll__,"TwEventWin")
+    except:
+        pass
     TwGLUTModifiersFunc         = getattr(__dll__,"TwGLUTModifiersFunc")
     TwGetBarByIndex             = getattr(__dll__,"TwGetBarByIndex")
     TwGetBarByName              = getattr(__dll__,"TwGetBarByName")
@@ -129,14 +134,20 @@ except:
     TwWindowExists              = getattr(__dll__,"TwWindowExists")
     TwWindowSize                = getattr(__dll__,"TwWindowSize")
 
-    TwEventCharGLFWcdecl        = getattr(__dll__,"TwEventCharGLFWcdecl")
-    TwEventKeyGLFWcdecl         = getattr(__dll__,"TwEventKeyGLFWcdecl")
+    try:
+        TwEventCharGLFWcdecl        = getattr(__dll__,"TwEventCharGLFWcdecl")
+        TwEventKeyGLFWcdecl         = getattr(__dll__,"TwEventKeyGLFWcdecl")
+    except:pass
     TwEventKeyboardGLUT         = getattr(__dll__,"TwEventKeyboardGLUT")
-    TwEventMouseButtonGLFWcdecl = getattr(__dll__,"TwEventMouseButtonGLFWcdecl")
+    try:
+        TwEventMouseButtonGLFWcdecl = getattr(__dll__,"TwEventMouseButtonGLFWcdecl")
+    except:pass
     TwEventMouseButtonGLUT      = getattr(__dll__,"TwEventMouseButtonGLUT")
     TwEventMouseMotionGLUT      = getattr(__dll__,"TwEventMouseMotionGLUT")
-    TwEventMousePosGLFWcdecl    = getattr(__dll__,"TwEventMousePosGLFWcdecl")
-    TwEventMouseWheelGLFWcdecl  = getattr(__dll__,"TwEventMouseWheelGLFWcdecl")
+    try:
+        TwEventMousePosGLFWcdecl    = getattr(__dll__,"TwEventMousePosGLFWcdecl")
+        TwEventMouseWheelGLFWcdecl  = getattr(__dll__,"TwEventMouseWheelGLFWcdecl")
+    except:pass
     TwEventSpecialGLUT          = getattr(__dll__,"TwEventSpecialGLUT")
 
 # On Mac OS Snow Leopard, the following definitions seems to be necessary to
